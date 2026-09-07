@@ -110,9 +110,9 @@
         </div>
 
         <section class="win-section">
-          <div class="win-section-title"><i data-lucide="badge-check" aria-hidden="true"></i><div><span>${ru?'Активация Windows':'Windows activation'}</span><p>${ru?'Проверка статуса и переход к официальным настройкам активации.':'Check activation status and open the official activation settings.'}</p></div></div>
+          <div class="win-section-title"><i data-lucide="badge-check" aria-hidden="true"></i><div><span>${ru?'Активация Windows':'Windows activation'}</span><p>${ru?'Настройка и активация правильного Windows.':'Setting up and activating the correct Windows.'}</p></div></div>
           <div class="win-command-grid">
-            ${commandCard('badge-check',ru?'Открыть терминал':'Check activation status',ru?'сочетание клавиш, для открытия контекстного меню.':'Shows whether the current Windows installation is activated.',activationCheck)}
+            ${commandCard('badge-check',ru?'Открыть терминал':'Check activation status',ru?'В открывшемся окне найдите "терминал" или "командную строку" и откройте':'In the window that opens, find "terminal" or "command prompt" and open it.',activationCheck)}
             ${commandCard('settings',ru?'Выполнить команду':'Open activation settings',ru?'Выполняет команду по активации Windows.':'Opens Settings → System → Activation.',activationSettings)}
           </div>
         </section>
@@ -123,7 +123,7 @@
         </section>
 
         <section class="win-section">
-          <div class="win-section-title"><i data-lucide="network" aria-hidden="true"></i><div><span>${ru?'YouTube / Discord — сетевой workaround':'YouTube / Discord network workaround'}</span><p>${ru?'Сохранил вашу закреплённую ссылку на zapret и отдельно добавил Releases, чтобы можно было проверить более свежую версию.':'Your pinned zapret link is kept here, plus Releases so you can check for a newer build.'}</p></div></div>
+          <div class="win-section-title"><i data-lucide="network" aria-hidden="true"></i><div><span>${ru?'YouTube / Discord — сетевой workaround':'YouTube / Discord network workaround'}</span><p>${ru?'Если вы ранее сталкивались с проблемой загрузки YouTube и Discord, то вот решение.':'If you've encountered YouTube and Discord loading issues before, here's the solution.'}</p></div></div>
           <div class="win-links-grid">
             <a class="win-link-card" href="https://github.com/Flowseal/zapret-discord-youtube/archive/refs/tags/1.7.2b.zip" target="_blank" rel="noreferrer"><i data-lucide="archive" aria-hidden="true"></i><div><strong>zapret 1.7.2b ZIP</strong><span>${ru?'Закреплённая версия из вашей памятки':'Pinned version from your note'}</span></div><i data-lucide="external-link" aria-hidden="true"></i></a>
             <a class="win-link-card" href="https://github.com/Flowseal/zapret-discord-youtube/releases" target="_blank" rel="noreferrer"><i data-lucide="github" aria-hidden="true"></i><div><strong>GitHub Releases</strong><span>${ru?'Проверить актуальные релизы':'Check current releases'}</span></div><i data-lucide="external-link" aria-hidden="true"></i></a>
