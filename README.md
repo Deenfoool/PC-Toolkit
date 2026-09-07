@@ -7,7 +7,7 @@
 - Static HTML / CSS / JavaScript
 - No backend
 - No build step
-- Designed for GitHub Pages from `main` / repository root
+- GitHub Pages deployment from `main`
 - Language preference is stored locally in the browser
 
 ## Included tools
@@ -41,10 +41,14 @@ All calculations and tests run locally. PC Toolkit has no analytics backend and 
 
 ## GitHub Pages
 
-The site is ready to publish from the repository root:
+Deployment mirrors the setup used by the portfolio project:
 
-`Settings → Pages → Build and deployment → Source: Deploy from a branch → main → /(root)`
+- `.github/workflows/pages.yml` runs on pushes to `main`
+- `actions/configure-pages` prepares Pages
+- `actions/upload-pages-artifact` uploads the repository root
+- `actions/deploy-pages` publishes the site
+- `.nojekyll` keeps the static files untouched by Jekyll
 
-Expected URL after Pages is enabled:
+Live URL:
 
 `https://deenfoool.github.io/PC-Toolkit/`
