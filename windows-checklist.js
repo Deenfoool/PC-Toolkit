@@ -112,8 +112,8 @@
         <section class="win-section">
           <div class="win-section-title"><i data-lucide="badge-check" aria-hidden="true"></i><div><span>${ru?'Активация Windows':'Windows activation'}</span><p>${ru?'Настройка и активация правильного Windows.':'Setting up and activating the correct Windows.'}</p></div></div>
           <div class="win-command-grid">
-            ${commandCard('badge-check',ru?'Открыть терминал':'Check activation status',ru?'В открывшемся окне найдите "терминал" или "командную строку" и откройте':'In the window that opens, find "terminal" or "command prompt" and open it.',activationCheck)}
-            ${commandCard('settings',ru?'Выполнить команду':'Open activation settings',ru?'Выполняет команду по активации Windows.':'Opens Settings → System → Activation.',activationSettings)}
+            ${commandCard('badge-check',ru?'Открыть терминал':'Open the terminal',ru?'В открывшемся окне найдите "терминал" или "командную строку" и откройте':'In the window that opens, find "terminal" or "command prompt" and open it.',activationCheck)}
+            ${commandCard('settings',ru?'Выполнить команду':'Open activation settings',ru?'Выполняет команду по активации Windows.':'Executes the command to activate Windows.',activationSettings)}
           </div>
         </section>
 
