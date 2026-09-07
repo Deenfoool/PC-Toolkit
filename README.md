@@ -15,18 +15,21 @@
 
 ## Included tools
 
+PC Toolkit currently includes **20 tools** plus the quick system snapshot.
+
 ### Monitor
 - Refresh rate test
 - FPS stability / frame pacing test
 - Dead pixel fullscreen test
-- Ghosting / motion response test
+- Motion / ghosting lab with adjustable speed, background and target style
 - Gradient & banding test
 - Contrast & shadow-detail test
 - Color test
+- Sharpness & geometry fullscreen patterns
 
 ### Input
-- Keyboard tester
-- Mouse button / double-click tester
+- Visual full-keyboard tester with persistent tested-key highlighting
+- Advanced mouse tester with button counters, wheel events, double-clicks, movement distance and coordinates
 - Browser pointer-event polling estimate
 - Gamepad tester via Gamepad API
 
@@ -35,6 +38,7 @@
 - Local microphone level meter
 
 ### Hardware & utilities
+- Guided Full PC Check: environment → display timing → input events → copyable summary
 - Quick browser/system snapshot
 - Copyable PC / browser report
 - RAM first-word latency calculator
@@ -45,6 +49,8 @@
 ## Privacy
 
 Tests and calculations are performed in the browser. PC Toolkit has no analytics backend and does not upload microphone audio or detected hardware information.
+
+Browser-based diagnostics are intentionally labeled with their limitations: the site cannot replace SMART checks, hardware temperature sensors, MemTest, raw USB analyzers or dedicated response-time measurement equipment.
 
 Lucide Icons are loaded as the UI icon set from the Lucide web package.
 
