@@ -123,7 +123,7 @@
         </section>
 
         <section class="win-section">
-          <div class="win-section-title"><i data-lucide="network" aria-hidden="true"></i><div><span>${ru?'YouTube / Discord — сетевой workaround':'YouTube / Discord network workaround'}</span><p>${ru?'Сохранил вашу закреплённую ссылку на zapret и отдельно добавил Releases, чтобы можно было проверить более свежую версию.':'Your pinned zapret link is kept here, plus Releases so you can check for a newer build.'}</p></div></div>
+          <div class="win-section-title"><i data-lucide="network" aria-hidden="true"></i><div><span>${ru?'YouTube / Discord — сетевой workaround':'YouTube / Discord network workaround'}</span><p>${ru?'Если ранее наблюдались проблемы с загрузкой и работой YouTube и Discord, то это решит проблему.':'If you have previously experienced problems with loading and working with YouTube and Discord, this will solve the problem..'}</p></div></div>
           <div class="win-links-grid">
             <a class="win-link-card" href="https://github.com/Flowseal/zapret-discord-youtube/archive/refs/tags/1.7.2b.zip" target="_blank" rel="noreferrer"><i data-lucide="archive" aria-hidden="true"></i><div><strong>zapret 1.7.2b ZIP</strong><span>${ru?'Закреплённая версия из вашей памятки':'Pinned version from your note'}</span></div><i data-lucide="external-link" aria-hidden="true"></i></a>
             <a class="win-link-card" href="https://github.com/Flowseal/zapret-discord-youtube/releases" target="_blank" rel="noreferrer"><i data-lucide="github" aria-hidden="true"></i><div><strong>GitHub Releases</strong><span>${ru?'Проверить актуальные релизы':'Check current releases'}</span></div><i data-lucide="external-link" aria-hidden="true"></i></a>
