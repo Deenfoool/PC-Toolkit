@@ -1,22 +1,28 @@
 # PC Toolkit
 
-**PC Toolkit** is a bilingual (English / Russian), privacy-first collection of PC tests and calculators that runs entirely in the browser.
+**PC Toolkit** is a bilingual (English / Russian), privacy-first collection of PC tests and calculators that runs in the browser.
 
 ## Live architecture
 
 - Static HTML / CSS / JavaScript
 - No backend
 - No build step
-- GitHub Pages deployment from `main`
-- Language preference is stored locally in the browser
+- GitHub Pages from `main` / repository root
+- `.nojekyll` for direct static publishing
+- No GitHub Actions dependency
+- English / Russian interface with locally stored language preference
+- Lucide Icons for the interface
 
 ## Included tools
 
 ### Monitor
 - Refresh rate test
+- FPS stability / frame pacing test
 - Dead pixel fullscreen test
 - Ghosting / motion response test
 - Gradient & banding test
+- Contrast & shadow-detail test
+- Color test
 
 ### Input
 - Keyboard tester
@@ -30,6 +36,7 @@
 
 ### Hardware & utilities
 - Quick browser/system snapshot
+- Copyable PC / browser report
 - RAM first-word latency calculator
 - PPI / pixel pitch calculator
 - PSU headroom calculator
@@ -37,17 +44,15 @@
 
 ## Privacy
 
-All calculations and tests run locally. PC Toolkit has no analytics backend and does not upload microphone audio or hardware data.
+Tests and calculations are performed in the browser. PC Toolkit has no analytics backend and does not upload microphone audio or detected hardware information.
+
+Lucide Icons are loaded as the UI icon set from the Lucide web package.
 
 ## GitHub Pages
 
-Deployment mirrors the setup used by the portfolio project:
+This repository intentionally does **not** depend on GitHub Actions for deployment.
 
-- `.github/workflows/pages.yml` runs on pushes to `main`
-- `actions/configure-pages` prepares Pages
-- `actions/upload-pages-artifact` uploads the repository root
-- `actions/deploy-pages` publishes the site
-- `.nojekyll` keeps the static files untouched by Jekyll
+Publish the repository root from the `main` branch with GitHub Pages (`main` → `/(root)`). The `.nojekyll` file keeps static assets untouched by Jekyll.
 
 Live URL:
 
