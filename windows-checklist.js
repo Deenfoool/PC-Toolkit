@@ -65,10 +65,19 @@
   }
   function saveProgress(state){localStorage.setItem(storageKey, JSON.stringify(state));}
 
-  function copyText(text, noteEl){
-    navigator.clipboard?.writeText(text).then(()=>{
-      if(noteEl) noteEl.textContent=currentLang==='ru'?'Скопировано':'Copied';
-    }).catch(()=>{});
+  async function copyText(text, noteEl){
+    let copied=false;
+    try{
+      if(navigator.clipboard?.writeText){await navigator.clipboard.writeText(text);copied=true;}
+    }catch{}
+    if(!copied){
+      const area=document.createElement('textarea');
+      area.value=text;area.style.position='fixed';area.style.opacity='0';
+      document.body.appendChild(area);area.select();
+      try{copied=document.execCommand?.('copy') || false;}catch{}
+      area.remove();
+    }
+    if(noteEl) noteEl.textContent=copied?(currentLang==='ru'?'Скопировано':'Copied'):(currentLang==='ru'?'Не удалось скопировать':'Copy failed');
   }
 
   function commandCard(icon,title,desc,command){
@@ -101,7 +110,7 @@
         </div>
 
         <section class="win-section">
-          <div class="win-section-title"><i data-lucide="badge-check" aria-hidden="true"></i><div><span>${ru?'Активация Windows':'Windows activation'}</span><p>${ru?'Без сторонних активаторов: проверка статуса и переход к официальным настройкам активации.':'No third-party activators: check status and open the official activation settings.'}</p></div></div>
+          <div class="win-section-title"><i data-lucide="badge-check" aria-hidden="true"></i><div><span>${ru?'Активация Windows':'Windows activation'}</span><p>${ru?'Проверка статуса и переход к официальным настройкам активации.':'Check activation status and open the official activation settings.'}</p></div></div>
           <div class="win-command-grid">
             ${commandCard('badge-check',ru?'Проверить статус активации':'Check activation status',ru?'Показывает, активирована ли текущая установка Windows.':'Shows whether the current Windows installation is activated.',activationCheck)}
             ${commandCard('settings',ru?'Открыть настройки активации':'Open activation settings',ru?'Открывает Settings → System → Activation.':'Opens Settings → System → Activation.',activationSettings)}
@@ -110,11 +119,11 @@
 
         <section class="win-section">
           <div class="win-section-title"><i data-lucide="user-cog" aria-hidden="true"></i><div><span>${ru?'Локальная учётная запись':'Local account'}</span><p>${ru?'Команда для изменения пароля локальной учётной записи. Нужны права администратора.':'Change the password of a local Windows account. Administrator rights are required.'}</p></div></div>
-          ${commandCard('terminal',ru?'Изменить пароль':'Change password',ru?'Замените USERNAME на имя локального пользователя. После запуска Windows попросит ввести новый пароль.':'Replace USERNAME with the local account name. Windows will prompt for a new password.',localPassword)}
+          ${commandCard('terminal',ru?'Изменить или убрать пароль':'Change or remove password',ru?'Замените USERNAME на имя локального пользователя. Чтобы убрать пароль, после запуска оставьте новый пароль пустым и подтвердите пустое значение.':'Replace USERNAME with the local account name. To remove the password, leave the new password blank when prompted and confirm the blank value.',localPassword)}
         </section>
 
         <section class="win-section">
-          <div class="win-section-title"><i data-lucide="network" aria-hidden="true"></i><div><span>${ru?'YouTube / Discord — сетевой workaround':'YouTube / Discord network workaround'}</span><p>${ru?'Сохранил вашу личную ссылку на zapret и отдельно добавил Releases, чтобы можно было проверить более свежую версию.':'Your pinned zapret link is kept here, plus Releases so you can check for a newer build.'}</p></div></div>
+          <div class="win-section-title"><i data-lucide="network" aria-hidden="true"></i><div><span>${ru?'YouTube / Discord — сетевой workaround':'YouTube / Discord network workaround'}</span><p>${ru?'Сохранил вашу закреплённую ссылку на zapret и отдельно добавил Releases, чтобы можно было проверить более свежую версию.':'Your pinned zapret link is kept here, plus Releases so you can check for a newer build.'}</p></div></div>
           <div class="win-links-grid">
             <a class="win-link-card" href="https://github.com/Flowseal/zapret-discord-youtube/archive/refs/tags/1.7.2b.zip" target="_blank" rel="noreferrer"><i data-lucide="archive" aria-hidden="true"></i><div><strong>zapret 1.7.2b ZIP</strong><span>${ru?'Закреплённая версия из вашей памятки':'Pinned version from your note'}</span></div><i data-lucide="external-link" aria-hidden="true"></i></a>
             <a class="win-link-card" href="https://github.com/Flowseal/zapret-discord-youtube/releases" target="_blank" rel="noreferrer"><i data-lucide="github" aria-hidden="true"></i><div><strong>GitHub Releases</strong><span>${ru?'Проверить актуальные релизы':'Check current releases'}</span></div><i data-lucide="external-link" aria-hidden="true"></i></a>
@@ -122,7 +131,7 @@
         </section>
 
         <section class="win-section">
-          <div class="win-section-title"><i data-lucide="package-plus" aria-hidden="true"></i><div><span>${ru?'Winget-конструктор':'Winget app builder'}</span><p>${ru?'Отметьте программы — PC Toolkit соберёт готовый PowerShell-скрипт установки.':'Select apps and PC Toolkit will build a ready-to-copy PowerShell install script.'}</p></div></div>
+          <div class="win-section-title"><i data-lucide="package-plus" aria-hidden="true"></i><div><span>${ru?'Winget-конструктор':'Winget app builder'}</span><p>${ru?'Отметьте программы — PC Toolkit соберёт готовые PowerShell-команды установки.':'Select apps and PC Toolkit will build ready-to-copy PowerShell install commands.'}</p></div></div>
           <div class="winget-apps">${apps.map(([name,id],index)=>`<label class="winget-app"><input type="checkbox" data-winget-id="${id}" ${index<4?'checked':''}><span>${name}</span></label>`).join('')}</div>
           <textarea class="report-output winget-output" id="winget-output" readonly></textarea>
           <div class="tool-actions"><button class="mini-btn accent" id="winget-copy"><i data-lucide="copy" aria-hidden="true"></i><span>${ru?'Скопировать команды':'Copy commands'}</span></button><button class="mini-btn" id="winget-select-all"><i data-lucide="list-checks" aria-hidden="true"></i><span>${ru?'Выбрать всё':'Select all'}</span></button></div>
