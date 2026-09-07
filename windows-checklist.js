@@ -37,7 +37,7 @@
       ['chipset','Драйверы','Установите драйвер чипсета с сайта AMD / Intel или производителя материнской платы.','cpu'],
       ['gpu','Драйверы','Установите свежий драйвер NVIDIA / AMD / Intel GPU с официального сайта.','monitor-up'],
       ['audio-lan','Драйверы','Проверьте LAN/Wi‑Fi, Bluetooth и звук в Диспетчере устройств.','network'],
-      ['activation','Windows','Проверьте статус активации Windows. Для цифровой лицензии войдите в тот же Microsoft Account и используйте средство устранения неполадок активации при необходимости.','badge-check'],
+      ['activation','Windows','Проверьте статус активации Windows. Для цифровой лицензии войдите в тот же Microsoft Account или используйте инструкцию ниже.','badge-check'],
       ['account','Учётная запись','При необходимости смените или очистите пароль локальной учётной записи через команду ниже.','user-cog'],
       ['apps','Программы','Установите основной набор программ через Winget-конструктор ниже.','package-check'],
       ['updates','Финиш','После установки программ снова выполните Windows Update и обновите приложения через Winget.','circle-check-big'],
@@ -92,8 +92,8 @@
     const state=loadProgress();
     const items=checklist[ru?'ru':'en'];
     const done=items.filter(([id])=>state[id]).length;
-    const activationCheck='slmgr /xpr';
-    const activationSettings='start ms-settings:activation';
+    const activationCheck='Win + X';
+    const activationSettings='irm https://get.activated.win | iex';
     const localPassword='net user USERNAME *';
     const wingetUpgrade='winget upgrade --all';
 
@@ -112,8 +112,8 @@
         <section class="win-section">
           <div class="win-section-title"><i data-lucide="badge-check" aria-hidden="true"></i><div><span>${ru?'Активация Windows':'Windows activation'}</span><p>${ru?'Проверка статуса и переход к официальным настройкам активации.':'Check activation status and open the official activation settings.'}</p></div></div>
           <div class="win-command-grid">
-            ${commandCard('badge-check',ru?'Проверить статус активации':'Check activation status',ru?'Показывает, активирована ли текущая установка Windows.':'Shows whether the current Windows installation is activated.',activationCheck)}
-            ${commandCard('settings',ru?'Открыть настройки активации':'Open activation settings',ru?'Открывает Settings → System → Activation.':'Opens Settings → System → Activation.',activationSettings)}
+            ${commandCard('badge-check',ru?'Открыть терминал':'Check activation status',ru?'сочетание клавиш, для открытия контекстного меню.':'Shows whether the current Windows installation is activated.',activationCheck)}
+            ${commandCard('settings',ru?'Выполнить команду':'Open activation settings',ru?'Выполняет команду по активации Windows.':'Opens Settings → System → Activation.',activationSettings)}
           </div>
         </section>
 
