@@ -1,0 +1,12 @@
+/* PC Toolkit — navigation and category filter polish */
+.top-nav .nav-external,.footer-links .nav-external{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.top-nav .nav-external svg,.footer-links .nav-external svg{width:14px;height:14px}
+.tools-section .section-heading{margin-bottom:16px}
+.filter-toolbar{width:max-content;max-width:100%;margin:0 0 28px;padding:5px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.025);overflow:hidden}
+.filter-toolbar .filter-row{display:flex;flex-wrap:nowrap;justify-content:flex-start;gap:3px;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:none;padding:0}
+.filter-toolbar .filter-row::-webkit-scrollbar{display:none}
+.filter-toolbar .filter{flex:0 0 auto;min-height:38px;padding:0 14px;border-color:transparent;background:transparent;white-space:nowrap;scroll-snap-align:start;transition:background .16s ease,color .16s ease,border-color .16s ease}
+.filter-toolbar .filter:hover{background:rgba(255,255,255,.06);color:var(--text);border-color:transparent}
+.filter-toolbar .filter.active{background:var(--text);color:#090b10;border-color:var(--text);box-shadow:0 2px 12px rgba(0,0,0,.18)}
+@media(max-width:900px){.tools-section .section-heading{margin-bottom:14px}.filter-toolbar{width:100%;padding:5px}.filter-toolbar .filter-row{width:100%}.filter-toolbar .filter{padding-inline:13px}}
+@media(max-width:700px){.filter-toolbar{margin-bottom:22px;border-radius:13px}.filter-toolbar .filter{min-height:36px;padding-inline:12px;font-size:12px}}
