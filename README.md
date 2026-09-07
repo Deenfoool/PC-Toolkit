@@ -1,39 +1,50 @@
 # PC Toolkit
 
-A privacy-friendly, browser-based toolkit for everyday PC users.
+**PC Toolkit** is a bilingual (English / Russian), privacy-first collection of PC tests and calculators that runs entirely in the browser.
 
-**Test. Diagnose. Calculate.** No account, no install, no backend required.
+## Live architecture
+
+- Static HTML / CSS / JavaScript
+- No backend
+- No build step
+- Designed for GitHub Pages from `main` / repository root
+- Language preference is stored locally in the browser
 
 ## Included tools
 
-- Quick browser/system snapshot
-- Refresh rate measurement
+### Monitor
+- Refresh rate test
 - Dead pixel fullscreen test
+- Ghosting / motion response test
+- Gradient & banding test
+
+### Input
 - Keyboard tester
-- Mouse tester
+- Mouse button / double-click tester
+- Browser pointer-event polling estimate
+- Gamepad tester via Gamepad API
+
+### Audio
 - Left / center / right speaker test
-- Microphone level test
+- Local microphone level meter
+
+### Hardware & utilities
+- Quick browser/system snapshot
 - RAM first-word latency calculator
 - PPI / pixel pitch calculator
 - PSU headroom calculator
 - Download time calculator
 
-## Why this project
+## Privacy
 
-PC Toolkit is intentionally static: most diagnostics and calculators run locally in the browser, which keeps hosting simple and avoids collecting user data.
+All calculations and tests run locally. PC Toolkit has no analytics backend and does not upload microphone audio or hardware data.
 
-## Run locally
+## GitHub Pages
 
-Open `index.html` directly, or serve the directory with any static server:
+The site is ready to publish from the repository root:
 
-```bash
-python3 -m http.server 8080
-```
+`Settings → Pages → Build and deployment → Source: Deploy from a branch → main → /(root)`
 
-Then visit `http://localhost:8080`.
+Expected URL after Pages is enabled:
 
-> Microphone access requires a secure context on deployed sites (`https://`) or localhost.
-
-## Deploy
-
-The repository is compatible with GitHub Pages. Publish the repository root from the `main` branch.
+`https://deenfoool.github.io/PC-Toolkit/`
