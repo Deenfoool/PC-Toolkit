@@ -15,7 +15,7 @@
 
 ## Included tools
 
-PC Toolkit currently includes **20 tools** plus the quick system snapshot.
+PC Toolkit currently includes **21 tools** plus the quick system snapshot.
 
 ### Monitor
 - Refresh rate test
@@ -36,6 +36,14 @@ PC Toolkit currently includes **20 tools** plus the quick system snapshot.
 ### Audio
 - Left / center / right speaker test
 - Local microphone level meter
+
+### Windows
+- Guided Windows reinstall / post-install checklist with locally saved progress
+- Official Windows activation status and settings commands
+- Local-account password command helper
+- Pinned zapret Discord / YouTube link plus GitHub Releases
+- Winget app-install command builder
+- Official Windows 11 download link
 
 ### Hardware & utilities
 - Guided Full PC Check: environment → display timing → input events → copyable summary
