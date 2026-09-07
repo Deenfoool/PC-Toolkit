@@ -1,0 +1,9 @@
+{
+  "name": "PC Toolkit",
+  "short_name": "PC Toolkit",
+  "description": "Browser-based tools for testing and understanding your PC.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#090b10",
+  "theme_color": "#090b10"
+}

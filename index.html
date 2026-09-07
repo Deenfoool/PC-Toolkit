@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#090b10" />
+  <meta name="description" content="PC Toolkit — free browser-based tests and calculators for your monitor, keyboard, mouse, audio, hardware and downloads." />
+  <meta property="og:title" content="PC Toolkit" />
+  <meta property="og:description" content="Test. Diagnose. Calculate. Everything runs locally in your browser." />
+  <meta property="og:type" content="website" />
+  <title>PC Toolkit — Test, Diagnose, Calculate</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="PC Toolkit home">
+      <span class="brand-mark">PC</span>
+      <span>Toolkit</span>
+    </a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#tools">Tools</a>
+      <a href="#quick-check">Quick check</a>
+      <a href="https://github.com/Deenfoool/PC-Toolkit" target="_blank" rel="noreferrer">GitHub ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="eyebrow"><span class="status-dot"></span> Free • local • no install</div>
+      <h1>Everything you need to<br /><span>check your PC.</span></h1>
+      <p class="hero-copy">A fast browser toolkit for monitor tests, input diagnostics, audio checks and useful hardware calculators. No account. No uploads.</p>
+      <div class="hero-actions">
+        <button class="btn primary" data-open="system-check">Run PC Check</button>
+        <a class="btn secondary" href="#tools">Browse tools</a>
+      </div>
+      <div class="trust-row">
+        <span>✓ Runs in your browser</span>
+        <span>✓ Privacy friendly</span>
+        <span>✓ Works on desktop & mobile</span>
+      </div>
+    </section>
+
+    <section class="quick-check shell" id="quick-check" aria-labelledby="quick-title">
+      <div class="section-heading compact">
+        <div>
+          <p class="kicker">Your environment</p>
+          <h2 id="quick-title">Quick system snapshot</h2>
+        </div>
+        <button class="text-btn" id="refresh-snapshot">Refresh</button>
+      </div>
+      <div class="snapshot-grid" id="snapshot-grid">
+        <article class="snapshot-card"><span>Display</span><strong id="snap-display">Detecting…</strong><small id="snap-dpr"></small></article>
+        <article class="snapshot-card"><span>CPU threads</span><strong id="snap-cpu">—</strong><small>Logical processors</small></article>
+        <article class="snapshot-card"><span>Memory</span><strong id="snap-memory">—</strong><small>Browser estimate</small></article>
+        <article class="snapshot-card"><span>GPU / renderer</span><strong id="snap-gpu">Detecting…</strong><small>WebGL renderer</small></article>
+      </div>
+    </section>
+
+    <section class="tools-section shell" id="tools" aria-labelledby="tools-title">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">Browser utilities</p>
+          <h2 id="tools-title">Pick a tool and test it now</h2>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter tools">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="monitor">Monitor</button>
+          <button class="filter" data-filter="input">Input</button>
+          <button class="filter" data-filter="audio">Audio</button>
+          <button class="filter" data-filter="hardware">Hardware</button>
+        </div>
+      </div>
+
+      <div class="tool-grid" id="tool-grid">
+        <article class="tool-card featured" data-category="monitor">
+          <div class="tool-icon">◉</div><span class="tool-tag">Monitor</span>
+          <h3>Refresh Rate Test</h3><p>Measure the display refresh rate with requestAnimationFrame.</p>
+          <button class="card-action" data-open="refresh-rate">Open tool <span>→</span></button>
+        </article>
+        <article class="tool-card" data-category="monitor">
+          <div class="tool-icon">▣</div><span class="tool-tag">Monitor</span>
+          <h3>Dead Pixel Test</h3><p>Fullscreen solid colors for spotting stuck and dead pixels.</p>
+          <button class="card-action" data-open="dead-pixel">Open tool <span>→</span></button>
+        </article>
+        <article class="tool-card" data-category="input">
+          <div class="tool-icon">⌨</div><span class="tool-tag">Input</span>
+          <h3>Keyboard Tester</h3><p>See key presses, codes and stuck-key behavior instantly.</p>
+          <button class="card-action" data-open="keyboard">Open tool <span>→</span></button>
+        </article>
+        <article class="tool-card" data-category="input">
+          <div class="tool-icon">↖</div><span class="tool-tag">Input</span>
+          <h3>Mouse Tester</h3><p>Check clicks, double-clicks, button input and live pointer data.</p>
+          <button class="card-action" data-open="mouse">Open tool <span>→</span></button>
+        </article>
+        <article class="tool-card" data-category="audio">
+          <div class="tool-icon">◖</div><span class="tool-tag">Audio</span>
+          <h3>Speaker Test</h3><p>Play left, right and center tones with browser audio panning.</p>
+          <button class="card-action" data-open="speaker">Open tool <span>→</span></button>
+        </article>
+        <article class="tool-card" data-category="audio">
+          <div class="tool-icon">♬</div><span class="tool-tag">Audio</span>
+          <h3>Microphone Test</h3><p>Inspect live microphone input level without uploading audio.</p>
+          <button class="card-action" data-open="microphone">Open tool <span>→</span></button>
+        </article>
+        <article class="tool-card" data-category="hardware">
+          <div class="tool-icon">RAM</div><span class="tool-tag">Hardware</span>
+          <h3>RAM Latency</h3><p>Estimate first-word latency from MT/s and CAS latency.</p>
+          <button class="card-action" data-open="ram">Open tool <span>→</span></button>
+        </article>
+        <article class="tool-card" data-category="hardware">
+          <div class="tool-icon">PPI</div><span class="tool-tag">Hardware</span>
+          <h3>PPI Calculator</h3><p>Calculate pixel density from resolution and display size.</p>
+          <button class="card-action" data-open="ppi">Open tool <span>→</span></button>
+        </article>
+        <article class="tool-card" data-category="hardware">
+          <div class="tool-icon">PSU</div><span class="tool-tag">Hardware</span>
+          <h3>PSU Headroom</h3><p>Estimate sensible PSU capacity from component power draw.</p>
+          <button class="card-action" data-open="psu">Open tool <span>→</span></button>
+        </article>
+        <article class="tool-card" data-category="hardware">
+          <div class="tool-icon">⇩</div><span class="tool-tag">Utility</span>
+          <h3>Download Time</h3><p>Convert file size and connection speed into an ETA.</p>
+          <button class="card-action" data-open="download">Open tool <span>→</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="privacy shell">
+      <div><p class="kicker">Designed to stay simple</p><h2>Your tests stay on your device.</h2></div>
+      <p>PC Toolkit uses browser APIs to perform tests locally. Microphone access is requested only when you start the mic test, and the audio stream is not uploaded anywhere.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer shell">
+    <div><strong>PC Toolkit</strong><p>Test. Diagnose. Calculate.</p></div>
+    <div class="footer-links"><a href="#tools">Tools</a><a href="https://github.com/Deenfoool/PC-Toolkit" target="_blank" rel="noreferrer">Source</a></div>
+  </footer>
+
+  <dialog class="tool-dialog" id="dialog">
+    <div class="dialog-shell">
+      <button class="dialog-close" id="dialog-close" aria-label="Close">×</button>
+      <div id="dialog-content"></div>
+    </div>
+  </dialog>
+
+  <div class="pixel-test" id="pixel-test" hidden>
+    <button id="pixel-exit">Exit test</button>
+    <div class="pixel-help">Click / tap to cycle colors • Esc to exit</div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
