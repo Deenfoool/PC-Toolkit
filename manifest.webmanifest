@@ -1,9 +1,10 @@
 {
   "name": "PC Toolkit",
   "short_name": "PC Toolkit",
-  "description": "Browser-based tools for testing and understanding your PC.",
+  "description": "Free bilingual browser-based PC tests and calculators.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#090b10",
-  "theme_color": "#090b10"
+  "theme_color": "#090b10",
+  "lang": "en"
 }
