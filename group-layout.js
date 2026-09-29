@@ -48,6 +48,7 @@
     const url = new URL(window.location.href);
     if (activeGroup === 'setup') url.searchParams.set('view','setup');
     else url.searchParams.delete('view');
+    url.hash = 'tools';
     history.replaceState({catalogView:activeGroup},'',url);
   }
 
