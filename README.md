@@ -15,7 +15,7 @@
 
 ## Included tools
 
-PC Toolkit currently includes **25 tools** plus the quick system snapshot.
+PC Toolkit currently includes **26 tools** plus the quick system snapshot.
 
 ### Monitor
 - Refresh rate test with cancelable frame sampling
