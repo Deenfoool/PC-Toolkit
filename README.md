@@ -15,6 +15,8 @@
 
 ## Included tools
 
+The homepage is split into two primary groups: **Tests & diagnostics** and **Windows & software**, so browser tests are not mixed with PC setup utilities.
+
 PC Toolkit currently includes **26 tools** plus the quick system snapshot.
 
 ### Monitor
@@ -41,7 +43,9 @@ PC Toolkit currently includes **26 tools** plus the quick system snapshot.
 - Local SHA-256 file checksum calculator via Web Crypto
 - Exact duplicate-file finder using size prefiltering plus SHA-256 for candidates
 
-### Windows
+### Windows & software
+- Essential PC Software catalog with official vendor links and a Winget command builder
+- Microsoft Word / Microsoft 365, WinRAR, Proton VPN, CrystalDiskInfo, OCCT, AIDA64 Extreme, CPU-Z, MSI Afterburner and MiniTool Partition Wizard Free
 - Guided Windows reinstall / post-install checklist with locally saved progress
 - Official Windows activation status and settings commands
 - Local-account password command helper
