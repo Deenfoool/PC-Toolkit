@@ -42,7 +42,7 @@
       icon:'file-text',
       group:'everyday',
       url:'https://www.microsoft.com/microsoft-365/word',
-      winget:'Microsoft.Office',
+      winget:null,
       license:{ru:'Нужна лицензия',en:'License required'},
       desc:{
         ru:'Word и остальные приложения Microsoft 365. Десктопная версия требует подходящую лицензию или подписку.',
